@@ -15,10 +15,10 @@ void menu()
     cout << "\t\t\t___________________________________________\n\n\n";
     cout << "\t\t\t             Welcome!!                     \n\n\n";
     cout << "\t\t\t___________     MENU    ___________________\n\n\n";
-    cout << "\t| Press 1 to Login                             |" << endl;
-    cout << "\t| Press 2 to Reginster                         |" << endl;
-    cout << "\t| Press 3 to If you forget your password       |" << endl;
-    cout << "\t| Press 4 to EXIT                              |" << endl;
+    cout << "| Press 1 to Login                             |" << endl;
+    cout << "| Press 2 to Reginster                         |" << endl;
+    cout << "| Press 3 to If you forget your password       |" << endl;
+    cout << "| Press 4 to EXIT                              |" << endl;
     cout << "Please enter your choice :" << endl;
     cin >> choose;
     cout << endl;
@@ -52,16 +52,16 @@ void login()
     int se;
     string UserName, Password, Fid, Fpass;
     system("cls");
-    cout << "\t\t\t Please enter the UserName and Password : " << endl;
-    cout << "\t\t\t If you want to go back regresiter or main menu , Please Enter 0 !";
-    cout << "\t\t\t UserName : ";
+    cout << "\nPlease enter the UserName and Password : " << endl;
+    cout << "If you want to go back regresiter or main menu , Please Enter 0 !";
+    cout << "UserName : ";
     cin >> UserName;
 
     if (UserName == "0") {
         menu();
     }
 
-    cout << "\t\t\t Password :";
+    cout << "Password :";
     cin >> Password;
 
     ifstream input("records.txt");
@@ -90,15 +90,15 @@ void registration()
 {
     string ruserID, rpassword, rid, rpass;
     system("cls");
-    cout << "\t\t\t Enter the Username :";
+    cout << "\nEnter the Username :";
     cin >> ruserID;
-    cout << "\t\t\t Enter the Password : ";
+    cout << "Enter the Password : ";
     cin >> rpassword;
 
     ofstream f1("records.txt", ios::app);
     f1 << ruserID << ' ' << rpassword << endl;
     system("cls");
-    cout << "\n\t\t\t Registration is successfull ! \n";
+    cout << "\nRegistration is successfull ! \n";
     login();
 }
 
@@ -109,20 +109,20 @@ void forget() {
     int select;
     string UID, sid, spassword;
     system("cls");
-    cout << "\t\t\t Press 1 to Show Password by username " << endl;
-    cout << "\t\t\t Press 2 to go back main menu " << endl;
-    cout << "\t\t\t Enter your choice : ";
+    cout << "\nPress 1 to Show Password by username " << endl;
+    cout << "Press 2 to go back main menu " << endl;
+    cout << "Enter your choice : ";
     cin >> select;
 
     switch (select) {
     case 1: {
         int count = 0;
-        cout << "\n\t\t\t Enter Your UserName :";
+        cout << "\nEnter Your UserName :";
         cin >> UID;
 
         ifstream f2("records.txt");
         if (!f2.is_open()) {
-            cout << "\n\t Error opening file!";
+            cout << "\n Error opening file!";
             menu();
             break;
         }
@@ -139,7 +139,7 @@ void forget() {
             cout << "\n\n Your Password is : " << spassword;
         }
         else {
-            cout << "\n\t Sorry! Cannot find your account\n";
+            cout << "\nSorry! Cannot find your account\n";
         }
         forget();
         break;
